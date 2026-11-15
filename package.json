@@ -1,13 +1,14 @@
 {
   "name": "o-millennium",
   "version": "1.0.0",
-  "description": "Plataforma de perguntas e conhecimentos gerais",
+  "description": "O MILLENNIUM - Perguntas gerais",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^5.1.0",
-    "express-session": "^1.18.2"
+    "express-session": "^1.18.2",
+    "pg": "^8.16.3"
   }
 }
