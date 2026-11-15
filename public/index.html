@@ -263,6 +263,54 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
 
     alert("Inscrição visualmente validada. O registo e a aprovação dependem da configuração do servidor.");
 });
+<script>
+document.getElementById("formulario").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const dados = {
+        nome: document.getElementById("nome").value.trim(),
+        idade: Number(document.getElementById("idade").value),
+        sexo: document.getElementById("sexo").value,
+        nascimento: document.getElementById("nascimento").value,
+        telefone: document.getElementById("telefone").value.trim(),
+        consentimento: document.getElementById("maior").checked
+    };
+
+    if (dados.idade < 18 || !dados.consentimento) {
+        alert("É necessário ter 18 anos ou mais.");
+        return;
+    }
+
+    const botao = this.querySelector("button");
+    botao.disabled = true;
+    botao.textContent = "A enviar...";
+
+    try {
+        const resposta = await fetch("/api/inscricao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dados)
+        });
+
+        const resultado = await resposta.json();
+
+        if (!resposta.ok) {
+            throw new Error(resultado.erro);
+        }
+
+        alert("Inscrição recebida com sucesso! ID: " + resultado.jogador.id);
+
+        this.reset();
+
+    } catch (erro) {
+        alert(erro.message || "Erro ao enviar inscrição.");
+    } finally {
+        botao.disabled = false;
+        botao.textContent = "CONTINUAR";
+    }
+});
 </script>
 
 </body>
