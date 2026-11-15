@@ -6,326 +6,184 @@
 <title>O MILLENNIUM</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: #080d19;
-    color: white;
-}
-
-header {
-    background: #101a2d;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #d5a52a;
-}
-
-.logo {
-    color: #f5c542;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-header p {
-    color: #bbb;
-    margin-top: 6px;
-}
-
-.container {
-    max-width: 650px;
-    margin: 20px auto;
-    padding: 15px;
-}
-
-.banner {
-    background: linear-gradient(135deg,#172c4b,#101827);
-    padding: 25px 15px;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid #d5a52a;
-}
-
-.banner h2 {
-    color: #f5c542;
-    margin-bottom: 10px;
-}
-
-.bonus {
-    background: #202c3e;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.bonus h1 {
-    color: #f5c542;
-    font-size: 35px;
-    margin: 10px;
-}
-
-.card {
-    background: #111c30;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 18px;
-}
-
-.card h3 {
-    color: #f5c542;
-    margin-bottom: 15px;
-}
-
-input, select {
-    width: 100%;
-    padding: 13px;
-    margin-bottom: 12px;
-    border: 1px solid #34435c;
-    border-radius: 8px;
-    background: #091323;
-    color: white;
-    font-size: 15px;
-}
-
-button {
-    width: 100%;
-    padding: 14px;
-    background: #d5a52a;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #101827;
-}
-
-button:hover {
-    background: #f5c542;
-}
-
-.payment {
-    background: #091323;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    line-height: 1.8;
-}
-
-.payment strong {
-    color: #f5c542;
-}
-
-.rules {
-    line-height: 1.9;
-    color: #ddd;
-    font-size: 14px;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #888;
-    font-size: 13px;
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#080d19;color:white}
+header{background:#101a2d;padding:20px;text-align:center;border-bottom:2px solid #d5a52a}
+.logo{color:#f5c542;font-size:28px;font-weight:bold}
+header p{color:#bbb;margin-top:6px}
+.container{max-width:650px;margin:20px auto;padding:15px}
+.banner{background:linear-gradient(135deg,#172c4b,#101827);padding:25px 15px;border-radius:15px;text-align:center;border:1px solid #d5a52a}
+.banner h2,.card h3{color:#f5c542;margin-bottom:12px}
+.bonus,.card{background:#111c30;padding:20px;border-radius:12px;margin-top:16px}
+.bonus{text-align:center;background:#202c3e}
+.bonus h1{color:#f5c542;font-size:35px;margin:10px}
+input,select{width:100%;padding:13px;margin:0 0 12px;border:1px solid #34435c;border-radius:8px;background:#091323;color:white;font-size:15px}
+.checkline{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.5;margin:5px 0 15px}
+.checkline input{width:auto;margin:3px 0 0}
+button{width:100%;padding:14px;background:#d5a52a;border:0;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;color:#101827}
+button:disabled{opacity:.6}
+.payment{background:#091323;padding:15px;border-radius:10px;margin-bottom:12px;line-height:1.8}
+.payment strong{color:#f5c542}
+.rules{line-height:1.9;color:#ddd;font-size:14px}
+.notice{background:#2b2412;border:1px solid #80651d;padding:12px;border-radius:8px;margin-top:12px;font-size:13px;line-height:1.5;color:#f5c542}
+footer{text-align:center;padding:25px;color:#888;font-size:13px}
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">👑 O MILLENNIUM</div>
-    <p>Conhecimento é poder. Desafie a sua inteligência!</p>
+<div class="logo">👑 O MILLENNIUM</div>
+<p>Conhecimento é poder. Desafie a sua inteligência!</p>
 </header>
 
-<div class="container">
+<main class="container">
 
-    <div class="banner">
-        <h2>BEM-VINDO AO O MILLENNIUM</h2>
-        <p>Mostre o seu conhecimento e desafie os seus limites!</p>
-    </div>
+<section class="banner">
+<h2>BEM-VINDO AO O MILLENNIUM</h2>
+<p>Mostre o seu conhecimento e desafie os seus limites!</p>
+</section>
 
-    <div class="bonus">
-        <h3>🎁 BÓNUS DE BOAS-VINDAS</h3>
-        <h1>1.000 MT</h1>
-        <p>Bónus em dinheiro real no primeiro pagamento, conforme as condições da promoção.</p>
-    </div>
+<section class="bonus">
+<h3>🎁 BÓNUS DE BOAS-VINDAS</h3>
+<h1>1.000 MT</h1>
+<p>Bónus anunciado para a primeira participação, sujeito às condições da promoção.</p>
+</section>
 
-    <div class="card">
-        <h3>📝 Inscrição do jogador</h3>
+<section class="card">
+<h3>📝 Inscrição do jogador</h3>
 
-        <form id="formulario">
+<form id="formulario">
 
-            <input type="text" id="nome"
-            placeholder="Nome completo" required>
+<input type="text" id="nome" placeholder="Nome completo" maxlength="120" required>
 
-            <input type="number" id="idade"
-            placeholder="Idade" min="18" required>
+<input type="number" id="idade" placeholder="Idade" min="18" max="120" required>
 
-            <select id="sexo" required>
-                <option value="">Selecione o sexo</option>
-                <option>Masculino</option>
-                <option>Feminino</option>
-                <option>Outro</option>
-            </select>
+<select id="sexo" required>
+<option value="">Selecione o sexo</option>
+<option value="Masculino">Masculino</option>
+<option value="Feminino">Feminino</option>
+<option value="Outro">Outro</option>
+</select>
 
-            <input type="date" id="nascimento" required>
+<input type="date" id="nascimento" required>
 
-            <input type="tel" id="telefone"
-            placeholder="Número de telefone" required>
+<input type="tel" id="telefone" placeholder="Número de telefone" maxlength="25" required>
 
-            <label style="font-size:13px;display:block;margin-bottom:15px">
-                <input type="checkbox" id="maior"
-                required style="width:auto">
-                Confirmo que tenho 18 anos ou mais.
-            </label>
+<label class="checkline">
+<input type="checkbox" id="maior" required>
+<span>Confirmo que tenho 18 anos ou mais e aceito o tratamento dos meus dados para gerir a inscrição.</span>
+</label>
 
-            <button type="submit">CONTINUAR</button>
+<button type="submit">CONTINUAR</button>
 
-        </form>
-    </div>
+</form>
 
-    <div class="card">
-        <h3>💳 Métodos de pagamento</h3>
+<p id="estado" role="status" aria-live="polite" style="margin-top:12px;font-size:14px"></p>
 
-        <div class="payment">
-            <strong>📱 M-PESA</strong><br>
-            1. Digite *150#<br>
-            2. Escolha opção 6 - Pagamentos<br>
-            3. Escolha opção 1<br>
-            4. Digite o código 1265973<br>
-            5. Insira 185 MT<br>
-            6. Confirme com o seu PIN.
-        </div>
+<div class="notice">
+O envio do formulário não significa aprovação. A inscrição fica pendente até ser analisada pela administração.
+</div>
+</section>
 
-        <div class="payment">
-            <strong>📱 e-MOLA</strong><br>
-            Faça uma transferência de 185 MT
-            para M-Pesa:<br>
-            <strong>852487728</strong>
-        </div>
+<section class="card">
+<h3>💳 Participação e pagamentos</h3>
+<p class="rules">Taxa prevista por rodada: 185 MT.</p>
 
-        <p style="color:#f5c542">
-            Taxa de participação: 185 MT
-        </p>
-    </div>
+<div class="notice">
+Os pagamentos e prémios em dinheiro ainda não estão ativos. Não envie dinheiro nem partilhe o seu PIN. A ativação depende da verificação legal e da confirmação segura dos pagamentos.
+</div>
+</section>
 
-    <div class="card">
-        <h3>🏆 Regras das perguntas</h3>
+<section class="card">
+<h3>🏆 Regras das perguntas</h3>
+<div class="rules">
+• Cada rodada contém 15 perguntas.<br>
+• Cada pergunta vale 100 pontos.<br>
+• É necessário acertar pelo menos 7 perguntas para atingir a pontuação mínima.<br>
+• Com menos de 7 respostas certas não há prémio.
+</div>
+</section>
 
-        <div class="rules">
-            • Cada rodada contém 15 perguntas.<br>
-            • Cada pergunta vale 100 pontos.<br>
-            • Cada resposta certa corresponde a 100 MT de prémio potencial.<br>
-            • É necessário acertar pelo menos 7 perguntas.<br>
-            • Com menos de 7 respostas certas não há prémio.<br>
-            • Para uma nova rodada é necessário um novo pagamento de 185 MT.
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>💰 Tabela de prémios</h3>
-
-        <div class="rules">
-            7 respostas certas — 700 MT<br>
-            8 respostas certas — 800 MT<br>
-            9 respostas certas — 900 MT<br>
-            10 respostas certas — 1.000 MT<br>
-            11 respostas certas — 1.100 MT<br>
-            12 respostas certas — 1.200 MT<br>
-            13 respostas certas — 1.300 MT<br>
-            14 respostas certas — 1.400 MT<br>
-            15 respostas certas — 1.500 MT
-        </div>
-    </div>
-
+<section class="card">
+<h3>💰 Tabela de prémios anunciada</h3>
+<div class="rules">
+7 respostas certas — 700 MT<br>
+8 respostas certas — 800 MT<br>
+9 respostas certas — 900 MT<br>
+10 respostas certas — 1.000 MT<br>
+11 respostas certas — 1.100 MT<br>
+12 respostas certas — 1.200 MT<br>
+13 respostas certas — 1.300 MT<br>
+14 respostas certas — 1.400 MT<br>
+15 respostas certas — 1.500 MT
 </div>
 
+<div class="notice">
+Os valores são informativos e não constituem promessa de pagamento enquanto o serviço não estiver legalmente autorizado e operacional.
+</div>
+</section>
+
+</main>
+
 <footer>
-    © 2026 O MILLENNIUM<br>
-    Todos os direitos reservados.
+© 2026 O MILLENNIUM<br>
+Todos os direitos reservados.
 </footer>
 
 <script>
-document.getElementById("formulario").addEventListener("submit", function(e) {
-    e.preventDefault();
+document.getElementById("formulario").addEventListener("submit", async function(e) {
 
-    const idade = Number(document.getElementById("idade").value);
+e.preventDefault();
 
-    if (idade < 18) {
-        alert("É necessário ter pelo menos 18 anos.");
-        return;
-    }
+const dados = {
+nome: document.getElementById("nome").value.trim(),
+idade: Number(document.getElementById("idade").value),
+sexo: document.getElementById("sexo").value,
+nascimento: document.getElementById("nascimento").value,
+telefone: document.getElementById("telefone").value.trim(),
+consentimento: document.getElementById("maior").checked
+};
 
-    const resposta = await fetch("/api/inscricao", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(dados)
+const estado = document.getElementById("estado");
+const botao = this.querySelector("button");
+
+botao.disabled = true;
+botao.textContent = "A enviar...";
+
+try {
+
+const resposta = await fetch("/api/inscricao", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify(dados)
 });
 
 const resultado = await resposta.json();
 
 if (!resposta.ok) {
-    throw new Error(resultado.erro);
+throw new Error(resultado.erro || "Erro ao realizar inscrição.");
 }
 
-alert("Inscrição recebida com sucesso! Número de registo: " + resultado.jogador.id);
-});
-<script>
-document.getElementById("formulario").addEventListener("submit", async function(e) {
-    e.preventDefault();
+estado.textContent = "Inscrição recebida! Estado: PENDENTE DE APROVAÇÃO. Número de registo: " + resultado.jogador.id;
 
-    const dados = {
-        nome: document.getElementById("nome").value.trim(),
-        idade: Number(document.getElementById("idade").value),
-        sexo: document.getElementById("sexo").value,
-        nascimento: document.getElementById("nascimento").value,
-        telefone: document.getElementById("telefone").value.trim(),
-        consentimento: document.getElementById("maior").checked
-    };
+this.reset();
 
-    if (dados.idade < 18 || !dados.consentimento) {
-        alert("É necessário ter 18 anos ou mais.");
-        return;
-    }
+} catch (erro) {
 
-    const botao = this.querySelector("button");
-    botao.disabled = true;
-    botao.textContent = "A enviar...";
+estado.textContent = erro.message || "Não foi possível enviar a inscrição.";
 
-    try {
-        const resposta = await fetch("/api/inscricao", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(dados)
-        });
+} finally {
 
-        const resultado = await resposta.json();
+botao.disabled = false;
+botao.textContent = "CONTINUAR";
 
-        if (!resposta.ok) {
-            throw new Error(resultado.erro);
-        }
+}
 
-        alert("Inscrição recebida com sucesso! ID: " + resultado.jogador.id);
-
-        this.reset();
-
-    } catch (erro) {
-        alert(erro.message || "Erro ao enviar inscrição.");
-    } finally {
-        botao.disabled = false;
-        botao.textContent = "CONTINUAR";
-    }
 });
 </script>
 
 </body>
-  </html>
+</html>
