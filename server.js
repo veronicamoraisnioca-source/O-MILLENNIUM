@@ -3,10 +3,17 @@ const { Pool } = require("pg");
 const path = require("path");
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static(path.join(__dirname, "public")));
+
+if (!process.env.DATABASE_URL) {
+    console.error("ERRO: DATABASE_URL não configurada.");
+    process.exit(1);
+}
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
@@ -15,8 +22,9 @@ const pool = new Pool({
     }
 });
 
-// Criar tabela de jogadores
+// Preparar base de dados
 async function iniciarBanco() {
+
     await pool.query(`
         CREATE TABLE IF NOT EXISTS jogadores (
             id SERIAL PRIMARY KEY,
@@ -24,7 +32,7 @@ async function iniciarBanco() {
             idade INTEGER NOT NULL,
             sexo VARCHAR(30) NOT NULL,
             nascimento DATE NOT NULL,
-            telefone VARCHAR(25) NOT NULL UNIQUE,
+            telefone VARCHAR(25) UNIQUE NOT NULL,
             consentimento BOOLEAN NOT NULL,
             estado VARCHAR(20) DEFAULT 'pendente',
             criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -36,22 +44,23 @@ async function iniciarBanco() {
 
 // Página inicial
 app.get("/", (req, res) => {
-    res.sendFile(
-        path.join(__dirname, "public", "index.html")
-    );
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Verificar servidor
 app.get("/api/status", (req, res) => {
     res.json({
         site: "O MILLENNIUM",
-        servidor: "Online"
+        servidor: "Online",
+        banco: "Conectado"
     });
 });
 
-// Registar jogador
+// Inscrição
 app.post("/api/inscricao", async (req, res) => {
+
     try {
+
         const {
             nome,
             idade,
@@ -61,20 +70,15 @@ app.post("/api/inscricao", async (req, res) => {
             consentimento
         } = req.body;
 
-        if (
-            !nome ||
-            !idade ||
-            !sexo ||
-            !nascimento ||
-            !telefone ||
-            consentimento !== true
-        ) {
+        if (!nome || !idade || !sexo || !nascimento ||
+            !telefone || consentimento !== true) {
+
             return res.status(400).json({
-                erro: "Preencha todos os campos e aceite a política de dados."
+                erro: "Preencha todos os campos."
             });
         }
 
-        const data = new Date(nascimento + "T12:00:00Z");
+        const data = new Date(nascimento + "T00:00:00Z");
         const hoje = new Date();
 
         if (isNaN(data.getTime()) || data > hoje) {
@@ -83,20 +87,21 @@ app.post("/api/inscricao", async (req, res) => {
             });
         }
 
-        let idadeReal = hoje.getUTCFullYear() - data.getUTCFullYear();
+        let idadeReal =
+            hoje.getUTCFullYear() - data.getUTCFullYear();
 
-        const aniversario =
-            new Date(Date.UTC(
-                hoje.getUTCFullYear(),
-                data.getUTCMonth(),
-                data.getUTCDate()
-            ));
+        const mes = hoje.getUTCMonth() - data.getUTCMonth();
 
-        if (hoje < aniversario) idadeReal--;
+        if (
+            mes < 0 ||
+            (mes === 0 && hoje.getUTCDate() < data.getUTCDate())
+        ) {
+            idadeReal--;
+        }
 
         if (idadeReal < 18 || Number(idade) !== idadeReal) {
             return res.status(400).json({
-                erro: "É necessário ter pelo menos 18 anos e informar a idade correta."
+                erro: "É necessário ter pelo menos 18 anos."
             });
         }
 
@@ -124,11 +129,13 @@ app.post("/api/inscricao", async (req, res) => {
         );
 
         res.status(201).json({
-            mensagem: "Inscrição recebida com sucesso!",
+            mensagem: "Inscrição recebida!",
             jogador: resultado.rows[0]
         });
 
     } catch (erro) {
+
+        console.error("Erro:", erro);
 
         if (erro.code === "23505") {
             return res.status(409).json({
@@ -136,24 +143,20 @@ app.post("/api/inscricao", async (req, res) => {
             });
         }
 
-        console.error("Erro na inscrição:", erro);
-
         res.status(500).json({
-            erro: "Não foi possível concluir a inscrição."
+            erro: "Erro ao realizar inscrição."
         });
     }
 });
 
 // Iniciar servidor
-const PORT = process.env.PORT || 3000;
-
 iniciarBanco()
     .then(() => {
+
         app.listen(PORT, () => {
-            console.log(
-                `O MILLENNIUM ativo na porta ${PORT}`
-            );
+            console.log("O MILLENNIUM ativo na porta " + PORT);
         });
+
     })
     .catch(erro => {
         console.error("Erro na base de dados:", erro);
