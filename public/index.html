@@ -261,7 +261,21 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
         return;
     }
 
-    alert("Inscrição visualmente validada. O registo e a aprovação dependem da configuração do servidor.");
+    const resposta = await fetch("/api/inscricao", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(dados)
+});
+
+const resultado = await resposta.json();
+
+if (!resposta.ok) {
+    throw new Error(resultado.erro);
+}
+
+alert("Inscrição recebida com sucesso! Número de registo: " + resultado.jogador.id);
 });
 <script>
 document.getElementById("formulario").addEventListener("submit", async function(e) {
