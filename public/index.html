@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O MILLENNIUM</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080d19;
+    color: white;
+}
+
+header {
+    background: #101a2d;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #d5a52a;
+}
+
+.logo {
+    color: #f5c542;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+header p {
+    color: #bbb;
+    margin-top: 6px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.banner {
+    background: linear-gradient(135deg,#172c4b,#101827);
+    padding: 25px 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #d5a52a;
+}
+
+.banner h2 {
+    color: #f5c542;
+    margin-bottom: 10px;
+}
+
+.bonus {
+    background: #202c3e;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.bonus h1 {
+    color: #f5c542;
+    font-size: 35px;
+    margin: 10px;
+}
+
+.card {
+    background: #111c30;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 18px;
+}
+
+.card h3 {
+    color: #f5c542;
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    border: 1px solid #34435c;
+    border-radius: 8px;
+    background: #091323;
+    color: white;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #d5a52a;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #101827;
+}
+
+button:hover {
+    background: #f5c542;
+}
+
+.payment {
+    background: #091323;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.payment strong {
+    color: #f5c542;
+}
+
+.rules {
+    line-height: 1.9;
+    color: #ddd;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #888;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">👑 O MILLENNIUM</div>
+    <p>Conhecimento é poder. Desafie a sua inteligência!</p>
+</header>
+
+<div class="container">
+
+    <div class="banner">
+        <h2>BEM-VINDO AO O MILLENNIUM</h2>
+        <p>Mostre o seu conhecimento e desafie os seus limites!</p>
+    </div>
+
+    <div class="bonus">
+        <h3>🎁 BÓNUS DE BOAS-VINDAS</h3>
+        <h1>1.000 MT</h1>
+        <p>Bónus em dinheiro real no primeiro pagamento, conforme as condições da promoção.</p>
+    </div>
+
+    <div class="card">
+        <h3>📝 Inscrição do jogador</h3>
+
+        <form id="formulario">
+
+            <input type="text" id="nome"
+            placeholder="Nome completo" required>
+
+            <input type="number" id="idade"
+            placeholder="Idade" min="18" required>
+
+            <select id="sexo" required>
+                <option value="">Selecione o sexo</option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Outro</option>
+            </select>
+
+            <input type="date" id="nascimento" required>
+
+            <input type="tel" id="telefone"
+            placeholder="Número de telefone" required>
+
+            <label style="font-size:13px;display:block;margin-bottom:15px">
+                <input type="checkbox" id="maior"
+                required style="width:auto">
+                Confirmo que tenho 18 anos ou mais.
+            </label>
+
+            <button type="submit">CONTINUAR</button>
+
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>💳 Métodos de pagamento</h3>
+
+        <div class="payment">
+            <strong>📱 M-PESA</strong><br>
+            1. Digite *150#<br>
+            2. Escolha opção 6 - Pagamentos<br>
+            3. Escolha opção 1<br>
+            4. Digite o código 1265973<br>
+            5. Insira 185 MT<br>
+            6. Confirme com o seu PIN.
+        </div>
+
+        <div class="payment">
+            <strong>📱 e-MOLA</strong><br>
+            Faça uma transferência de 185 MT
+            para M-Pesa:<br>
+            <strong>852487728</strong>
+        </div>
+
+        <p style="color:#f5c542">
+            Taxa de participação: 185 MT
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🏆 Regras das perguntas</h3>
+
+        <div class="rules">
+            • Cada rodada contém 15 perguntas.<br>
+            • Cada pergunta vale 100 pontos.<br>
+            • Cada resposta certa corresponde a 100 MT de prémio potencial.<br>
+            • É necessário acertar pelo menos 7 perguntas.<br>
+            • Com menos de 7 respostas certas não há prémio.<br>
+            • Para uma nova rodada é necessário um novo pagamento de 185 MT.
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>💰 Tabela de prémios</h3>
+
+        <div class="rules">
+            7 respostas certas — 700 MT<br>
+            8 respostas certas — 800 MT<br>
+            9 respostas certas — 900 MT<br>
+            10 respostas certas — 1.000 MT<br>
+            11 respostas certas — 1.100 MT<br>
+            12 respostas certas — 1.200 MT<br>
+            13 respostas certas — 1.300 MT<br>
+            14 respostas certas — 1.400 MT<br>
+            15 respostas certas — 1.500 MT
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 O MILLENNIUM<br>
+    Todos os direitos reservados.
+</footer>
+
+<script>
+document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const idade = Number(document.getElementById("idade").value);
+
+    if (idade < 18) {
+        alert("É necessário ter pelo menos 18 anos.");
+        return;
+    }
+
+    alert("Inscrição visualmente validada. O registo e a aprovação dependem da configuração do servidor.");
+});
+</script>
+
+</body>
+  </html>
